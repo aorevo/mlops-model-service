@@ -1,0 +1,9 @@
+services:
+  mlops-model-service:
+    build: .
+    container_name: mlops-model-service
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=app/model.pkl
+    restart: unless-stopped
